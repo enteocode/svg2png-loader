@@ -7,7 +7,7 @@ svg2png-loader ![Build Status][A]
 ## Goals
 
 - No platform dependencies (Inkscape, Imagick, etc...)
-- `Image` srcset (Browser)
+- Image src-set (Browser)
 - SVG for `NativeImage` (Electron, supporting `ratios` for autoload)
 
 ## Highlights
