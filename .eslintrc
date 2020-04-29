@@ -1,0 +1,21 @@
+{
+    "parser" : "@typescript-eslint/parser",
+    "extends" : [
+        "eslint:recommended"
+    ],
+    "env" : {
+        "browser" : false,
+        "es6" : true,
+        "node" : true
+    },
+    "rules": {
+        "quotes" : [1, "single", { "allowTemplateLiterals": true }],
+        "no-unused-vars": 0,
+        "no-undef": 0,
+        "no-bitwise" : 0,
+        "no-console" : 0
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    }
+}

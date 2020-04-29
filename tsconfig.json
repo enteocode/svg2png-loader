@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "target": "ES5",
+        "moduleResolution": "node",
+        "removeComments": true
+    },
+    "files": [
+        "index.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
