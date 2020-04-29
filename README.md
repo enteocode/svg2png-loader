@@ -1,14 +1,15 @@
 svg2png-loader ![Build Status][A]
 ==============
 
-> Webpack Loader to rasterize SVG to multiple PNG images for different 
+> Webpack Loader to convert SVG to multiple PNG images for different 
 > pixel-ratios using PhantomJS
 
 ## Goals
 
 - No platform dependencies (Inkscape, Imagick, etc...)
+- Fallback (IE)
 - Image src-set (Browser)
-- SVG for `NativeImage` (Electron, supporting `ratios` for autoload)
+- SVG import for `NativeImage` (Electron, supporting `ratios` for retina)
 
 ## Highlights
 
@@ -54,7 +55,7 @@ Pixel-ratios to render during the load.
 ### name
 
 Type: `string`  
-Default: `[name].[hash:7][suffix].[ext]`
+Default: `"[name].[hash:7][suffix].[ext]"`
 
 The name pattern of exported asset, according to Webpack standards.
 The `[suffix]` must be on the end with its default value to work with Electron
@@ -63,8 +64,8 @@ properly.
 ### type
 
 Type: `string`  
-Enum: `"js"`, `"es"`, `"typescript"`  
-Default: `js`
+Accepted values: `"js"`, `"es"`, `"typescript"`  
+Default: `"js"`
 
 You can specify the export syntax if want to chain together with another 
 loader, like `babel-loader` or `ts-loader`. The TypeScript version
@@ -81,7 +82,7 @@ the compiled assets will be optimized after the rendering process is done. If no
 ### suffix
 
 Type: `string`  
-Default: `@[ratio]x`
+Default: `"@[ratio]x"`
 
 Pattern of the suffix.
 
@@ -95,5 +96,6 @@ If disabled, then the default exported size (1x) won't be suffixed.
 ## License
 
 MIT © 2020, Székely Ádám
+
 
 [A]: https://api.travis-ci.com/enteocode/svg2png-loader.svg?branch=master
