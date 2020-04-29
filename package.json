@@ -1,7 +1,7 @@
 {
     "name": "svg2png-loader",
     "description": "Webpack Loader to rasterize SVG vector into multiple PNG images for different pixel-ratios using PhantomJS",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "main": "index.js",
     "scripts": {
