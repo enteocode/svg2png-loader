@@ -1,6 +1,5 @@
 .DS_Store
 .idea
-.env
 .vscode
 
 # Directories
@@ -8,4 +7,8 @@
 /node_modules/
 /example/*.png
 /example/index.js
+
+# Generated LICENSE files
+
+*.LICENSE.txt
 
