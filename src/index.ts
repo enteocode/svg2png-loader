@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import path from 'path';
 import { getOptions, interpolateName } from 'loader-utils';
 import { convert } from './toolkit';
 
@@ -80,9 +81,15 @@ const getExportDefinition = (defaultExport: any, exports: Object = {}, type: Mod
  * @public
  */
 const loader: Loader = function (buffer: Buffer) {
+    const context = this;
+
+    // Check loaded resource (if chained with javascript)
+
+    if ('.svg' !== path.extname(context.resourcePath).toLowerCase()) {
+        return buffer;
+    }
     this.cacheable(true);
 
-    const context = this;
     const { name, type, optimize, ratios, suffix, forceSuffix } = Object.assign({}, defaultOptions, getOptions(context));
     const callback = context.async();
     const variants = ratios.includes(1) ? ratios : [ 1 ].concat(ratios);
